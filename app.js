@@ -10,8 +10,10 @@ module.exports = (sample_text, sample_data, result_path) => {
     const processed_string = Replacer(sample_string, data)
     const save_path = __dirname + '/' + result_path
 
+    // console.log(SaveJSON(save_path, `{ "processed": '${ processed_string }' }`), "17");
     SaveJSON(save_path, `{ "processed": "${ processed_string }" }`)
 
     const processed_json = JSONLoader(save_path)
+
     return processed_json
 }
